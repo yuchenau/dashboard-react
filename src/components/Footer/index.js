@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.less'
 
 class Footer extends Component {
     constructor(props) {
@@ -7,7 +8,9 @@ class Footer extends Component {
     }
     render() {
         return ( 
-            <div>This is a footer</div>
+            <div className="footer">
+                版权所有©慕课网#完蛋啦迟到啦（推荐使用谷歌浏览器打开）
+            </div>
         );
     }
 }
