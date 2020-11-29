@@ -16,11 +16,15 @@ class Router extends Component {
         return ( 
             <HashRouter>
                 <App>
+                    {/* Login, Admin, OrderDetails 三个页面的层级是一致的 */}
                     <Route path="/login" component={Login}/>
                     <Route path="/admin" component={()=>
                         <Admin>
-                            <Route path="/admin/ui/buttons" component={Buttons}/>
-                            <Route component={NotFound}/>
+                            {/* 只匹配单个标签 */}
+                            <Switch>
+                                <Route path="/admin/ui/buttons" component={Buttons}/>
+                                <Route component={NotFound}/>
+                            </Switch>
                         </Admin>
                     }/>
                 </App>

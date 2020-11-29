@@ -37,7 +37,7 @@ class NavLeft extends Component {
             <div>
                 <div className='logo'>
                     <img src="/assets/logo-ant.svg" alt=""/>
-                    <h1>Imooc MS</h1>
+                    <h1>MS</h1>
                 </div>
                 <Menu theme="dark">
                     {/* <SubMenu key="sub1" title={<span><MailOutlined /><span>Navigation One</span></span>}>

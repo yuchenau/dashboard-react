@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.less';
 
 class NotFound extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class NotFound extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className="notfound">
                 404 not found
             </div>
         );

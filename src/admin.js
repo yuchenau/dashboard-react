@@ -3,7 +3,7 @@ import { Row, Col } from 'antd';
 import NavLeft from './components/NavLeft/index';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
-import Home from './pages/home/index';
+// import Home from './pages/home/index';
 import './style/common.less';
 
 class Admin extends Component {
