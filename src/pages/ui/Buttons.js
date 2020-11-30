@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Button, Radio } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined, SearchOutlined, DownloadOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
-import "./ui.less";
 
 class Buttons extends Component {
     constructor(props) {

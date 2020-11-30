@@ -4,6 +4,7 @@ import App from './App';
 import Login from './pages/login';
 import Admin from './admin';
 import Buttons from './pages/ui/Buttons';
+import Modals from './pages/ui/Modals';
 import NotFound from './pages/notfound/index';
 
 class Router extends Component {
@@ -23,6 +24,7 @@ class Router extends Component {
                             {/* 只匹配单个标签 */}
                             <Switch>
                                 <Route path="/admin/ui/buttons" component={Buttons}/>
+                                <Route path="/admin/ui/modals" component={Modals}/>
                                 <Route component={NotFound}/>
                             </Switch>
                         </Admin>
