@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import { Card, Button, Spin, Alert } from 'antd';
+import { Card } from 'antd';
 
-class Loading extends Component {
+class Carousels extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
-
+    
     render() { 
         return ( 
             <div>
-                <Card title="Spin 的用法">
-                    
+                <Card title="走马灯">
+
                 </Card>
             </div>
         );
     }
 }
  
-export default Loading;
+export default Carousels;

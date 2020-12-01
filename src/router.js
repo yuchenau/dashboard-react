@@ -5,6 +5,11 @@ import Login from './pages/login';
 import Admin from './admin';
 import Buttons from './pages/ui/Buttons';
 import Modals from './pages/ui/Modals';
+import Loadings from './pages/ui/Loadings';
+import Notices from './pages/ui/Notices';
+import Messages from './pages/ui/Messages';
+import Tab from './pages/ui/Tabs';
+import Galleries from './pages/ui/Galleries';
 import NotFound from './pages/notfound/index';
 
 class Router extends Component {
@@ -25,6 +30,11 @@ class Router extends Component {
                             <Switch>
                                 <Route path="/admin/ui/buttons" component={Buttons}/>
                                 <Route path="/admin/ui/modals" component={Modals}/>
+                                <Route path="/admin/ui/loadings" component={Loadings}/>
+                                <Route path="/admin/ui/notices" component={Notices}/>
+                                <Route path="/admin/ui/messages" component={Messages}/>
+                                <Route path="/admin/ui/tabs" component={Tab}/>
+                                <Route path="/admin/ui/galleries" component={Galleries}/>
                                 <Route component={NotFound}/>
                             </Switch>
                         </Admin>
