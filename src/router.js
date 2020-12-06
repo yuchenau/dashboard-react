@@ -11,6 +11,8 @@ import Messages from './pages/ui/Messages';
 import Tab from './pages/ui/Tabs';
 import Galleries from './pages/ui/Galleries';
 import NotFound from './pages/notfound/index';
+import LoginForm from './pages/form/Login';
+import BasicTable from './pages/table/BasicTable';
 
 class Router extends Component {
     constructor(props) {
@@ -35,6 +37,8 @@ class Router extends Component {
                                 <Route path="/admin/ui/messages" component={Messages}/>
                                 <Route path="/admin/ui/tabs" component={Tab}/>
                                 <Route path="/admin/ui/galleries" component={Galleries}/>
+                                <Route path="/admin/form/login" component={LoginForm}/>
+                                <Route path="/admin/table/basic" component={BasicTable}/>
                                 <Route component={NotFound}/>
                             </Switch>
                         </Admin>
