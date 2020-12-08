@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Table } from 'antd';
+import { Card, Table, Modal } from 'antd';
 import axios from '../../axios/index';
 
 class BasicTable extends Component {
@@ -43,6 +43,9 @@ class BasicTable extends Component {
                 time: '09:00'
             }
         ];
+        dataSource.map((item, index) => {
+            item.key = index;
+        })
         this.setState({
             dataSource
         });
@@ -59,11 +62,26 @@ class BasicTable extends Component {
             }
         }).then((res) => {
             if (res.code === 0) {
+                res.result.item_list.map((item, index) => {
+                    item.key = index;
+                });
                 this.setState({
                     dataSource_d: res.result.item_list
-                })
+                });
             }
         })
+    }
+
+    onRowClick = (record, index) => {
+        let selectkey = [index];
+        Modal.info({
+            title: '信息',
+            content: `用户名：${record.userName}，用户爱好：${record.interest}`
+        })
+        this.setState({
+            selectedRowKeys: selectkey, // 索引 list
+            selectedItem: record // 选中了哪一个对象
+        });
     }
 
     render() { 
@@ -80,7 +98,7 @@ class BasicTable extends Component {
                 title: '性别',
                 dataIndex: 'sex',
                 render(sex) {
-                    return sex == 1? "男":"女"
+                    return sex === 1? "男":"女"
                 }
             },
             {
@@ -128,6 +146,12 @@ class BasicTable extends Component {
             }
         ];
 
+        const {selectedRowKeys} = this.state;
+        const rowSelection = {
+            type: 'radio',
+            selectedRowKeys
+        };
+
         return ( 
             <div>
                 <Card title="基础表格">
@@ -140,6 +164,19 @@ class BasicTable extends Component {
                     <Table
                         columns={columns}
                         dataSource={this.state.dataSource_d}
+                    />
+                </Card>
+                <Card title="单选">
+                    <Table
+                        columns={columns}
+                        dataSource={this.state.dataSource_d}
+                        rowSelection={rowSelection}
+                        onRow={(record, index) => {
+                            return {
+                                onClick: () => {this.onRowClick(record, index)}, // 点击行
+                                // onMouseEnter: () => {} // 鼠标移入行
+                            }
+                        }}
                     />
                 </Card>
             </div>
